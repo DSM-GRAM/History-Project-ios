@@ -10,8 +10,9 @@
 - 테스트 -> 정
 
 #### 사용 라이브러리
-- RxAlmofire
-- Codable
-- ObjectMapper
+- RxAlamofire
+- AlamofireObjectMapper
 - Kingfisher
 - Navigation-Toolbar
+- GVRSDK
+
