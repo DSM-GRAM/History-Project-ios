@@ -10,4 +10,6 @@ target 'History-Project-ios' do
  pod 'ObjectMapper', '~> 3.4'
  pod 'Kingfisher'
  pod 'Navigation-Toolbar'
+ pod 'RxSwift'
+ pod 'RxCocoa'
 end
