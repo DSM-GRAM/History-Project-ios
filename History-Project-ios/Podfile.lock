@@ -18,7 +18,7 @@ PODS:
 DEPENDENCIES:
   - Kingfisher
   - Navigation-Toolbar
-  - ObjectMapper (~> 3.4)
+  - ObjectMapper
   - RxAlamofire
   - RxCocoa
   - RxSwift
