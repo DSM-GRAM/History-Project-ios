@@ -7,7 +7,7 @@ target 'History-Project-ios' do
 
   # Pods for History-Project-ios
  pod 'RxAlamofire'
- pod 'ObjectMapper', '~> 3.4'
+ pod 'ObjectMapper'
  pod 'Kingfisher'
  pod 'Navigation-Toolbar'
 end
