@@ -16,13 +16,13 @@ class InfoViewModel: ViewModelType {
     struct Input {
         let area: BehaviorRelay<String>
         let historicalSiteCode: BehaviorRelay<String>
-        let clickNext: Signal<Void>
         let clickHome: Signal<Void>
+        let clickNext: Signal<Void>
     }
     
     struct Output {
         let explain: Driver<String>
-        let extra: Driver<Extra>
+        let extra: Driver<[InfoModel.ExtraModel]>
         let extraText: Driver<String>
         let imagePath: Driver<String>
         let location: Driver<String>
@@ -32,7 +32,7 @@ class InfoViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         let explain = BehaviorRelay<String>(value: "")
-        let extra = BehaviorRelay<String>(value: "")
+        let extra = BehaviorRelay<[InfoModel.ExtraModel]>(value: [])
         let extraText = BehaviorRelay<String>(value: "")
         let imagePath = BehaviorRelay<String>(value: "")
         let location = BehaviorRelay<String>(value: "")
@@ -42,27 +42,28 @@ class InfoViewModel: ViewModelType {
         
         let areaAndCode = BehaviorRelay.combineLatest(input.area, input.historicalSiteCode) {($0,$1)}
         
-        areaAndCode.asObservable().subscribe { areaAndCode in
+        areaAndCode.asObservable().subscribe { [weak self] areaAndCode in
             if let areaAndCode = areaAndCode.element {
                 let (area, code) = areaAndCode
+                let mainApi = MainApi()
                 
+                guard let strongSelf = self else{ return }
+                
+                mainApi.getInfo(area: area, historySiteCode: code).subscribe({ model in
+                    if let model = model.element {
+                        if let model = model {
+                            explain.accept(model.explain ?? "")
+                            extra.accept(model.extra ?? [])
+                            extraText.accept(model.extraText ?? "")
+                            imagePath.accept(model.imagePath ?? "")
+                            location.accept(model.location ?? "")
+                            text.accept(model.text ?? "")
+                        }
+                    }
+                }).disposed(by: strongSelf.disposeBag)
             }
-        }
-        
-        
-        
-       return
-    }
-}
-
-class Extra {
-    let extraImagePath: String
-    let extraLocation: String
-    let extraName: String
+        }.disposed(by: disposeBag)
     
-    init(extraImagePath: String, extraLocation: String, extraName: String) {
-        self.extraImagePath = extraImagePath
-        self.extraLocation = extraLocation
-        self.extraName = extraName
+       return Output(explain: explain.asDriver(), extra: extra.asDriver(), extraText: extraText.asDriver(), imagePath: imagePath.asDriver(), location: location.asDriver(), text: text.asDriver())
     }
 }
