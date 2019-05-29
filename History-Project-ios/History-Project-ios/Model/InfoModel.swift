@@ -14,6 +14,7 @@ class InfoModel: Mappable {
     
     func mapping(map: Map) {
         explain <- map["explain"]
+        extra <- map["extra"]
         extraText <- map["extraText"]
         imagePath <- map["imagePath"]
         location <- map["location"]
@@ -21,6 +22,7 @@ class InfoModel: Mappable {
     }
     
     var explain: String?
+    var extra: [ExtraModel]?
     var extraText: String?
     var imagePath: String?
     var location: String?
