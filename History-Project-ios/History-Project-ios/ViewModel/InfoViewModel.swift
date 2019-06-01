@@ -18,27 +18,27 @@ class InfoViewModel: ViewModelType {
         let historicalSiteCode: BehaviorRelay<String>
         let clickHome: Signal<Void>
         let clickNext: Signal<Void>
+        let clickList: Signal<Void>
     }
     
     struct Output {
         let explain: Driver<String>
-        let extra: Driver<[InfoModel.ExtraModel]>
+        let extra: Driver<[InfoModel.Extra]>
         let extraText: Driver<String>
         let imagePath: Driver<String>
         let location: Driver<String>
         let text: Driver<String>
-        
+        let goVC: BehaviorRelay<GoWhere>
     }
     
     func transform(input: Input) -> Output {
         let explain = BehaviorRelay<String>(value: "")
-        let extra = BehaviorRelay<[InfoModel.ExtraModel]>(value: [])
+        let extra = BehaviorRelay<[InfoModel.Extra]>(value: [])
         let extraText = BehaviorRelay<String>(value: "")
         let imagePath = BehaviorRelay<String>(value: "")
         let location = BehaviorRelay<String>(value: "")
         let text = BehaviorRelay<String>(value: "")
-        
-        
+        let goVC = BehaviorRelay<GoWhere>(value: .stay)
         
         let areaAndCode = BehaviorRelay.combineLatest(input.area, input.historicalSiteCode) {($0,$1)}
         
@@ -63,7 +63,24 @@ class InfoViewModel: ViewModelType {
                 }).disposed(by: strongSelf.disposeBag)
             }
         }.disposed(by: disposeBag)
+        
+        input.clickList.asObservable().subscribe({ _ in
+            goVC.accept(.goSiteList)
+        }).disposed(by: disposeBag)
+        
+        input.clickHome.asObservable().subscribe({ _ in
+            goVC.accept(.home)
+        }).disposed(by: disposeBag)
+        
+        input.clickNext.asObservable().subscribe({ _ in
+            goVC.accept(.next)
+        }).disposed(by: disposeBag)
+        
     
-       return Output(explain: explain.asDriver(), extra: extra.asDriver(), extraText: extraText.asDriver(), imagePath: imagePath.asDriver(), location: location.asDriver(), text: text.asDriver())
+        return Output(explain: explain.asDriver(), extra: extra.asDriver(), extraText: extraText.asDriver(), imagePath: imagePath.asDriver(), location: location.asDriver(), text: text.asDriver(), goVC: goVC)
     }
+}
+
+enum GoWhere {
+    case home, next, back, goSiteList, stay
 }

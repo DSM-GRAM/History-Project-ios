@@ -34,16 +34,10 @@ class MainApi: MainProvider {
         return httpClient.get(url: infoPath, params: nil).map { (response, data) -> InfoModel? in
             switch response.statusCode {
             case 200 :
-                let jsonString = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                
-                if let jsonString = jsonString {
-                    let model = InfoModel(JSON: jsonString)
-                    
-                    return model
+                guard let model = try? JSONDecoder().decode(InfoModel.self, from: data) else {
+                    return nil
                 }
-                
-                return nil
-                
+                return model
             default : return nil
             }
         }

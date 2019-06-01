@@ -7,37 +7,34 @@
 //
 
 import Foundation
-import ObjectMapper
 
-class InfoModel: Mappable {
-    required init?(map: Map) { }
+struct InfoModel: Codable {
+    let explain: String
+    let extra: [Extra]
+    let extraText: String
+    let imagePath: String
+    let location: String
+    let text: String
     
-    func mapping(map: Map) {
-        explain <- map["explain"]
-        extra <- map["extra"]
-        extraText <- map["extraText"]
-        imagePath <- map["imagePath"]
-        location <- map["location"]
-        text <- map["text"]
+    enum CodingKeys: String, CodingKey {
+        case explain
+        case extra
+        case extraText
+        case imagePath
+        case location
+        case text
     }
     
-    var explain: String?
-    var extra: [ExtraModel]?
-    var extraText: String?
-    var imagePath: String?
-    var location: String?
-    var text: String?
-    
-    class ExtraModel: Mappable {
-        required init?(map: Map) { }
+    struct Extra: Codable {
+        let extraName: String
+        let extraImagePath: String
+        let extraLocation: String
         
-        func mapping(map: Map) {
-            extraImagePath <- map["extraImagePath"]
-            extraLocation <- map["extraLocation"]
-            extraName <- map["extraName"]
+        enum CodingKeys: String, CodingKey {
+            case extraName
+            case extraImagePath
+            case extraLocation
         }
-        var extraImagePath: String?
-        var extraLocation: String?
-        var extraName: String?
     }
 }
+
