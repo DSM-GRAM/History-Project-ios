@@ -22,3 +22,14 @@ class RoundButton: UIButton {
         layer.shadowOffset = CGSize.init(width: 1, height: 1)
     }
 }
+
+class RoundImageView: UIImageView {
+    
+    override func awakeFromNib() {
+        setShape()
+    }
+    
+    func setShape(){
+        layer.cornerRadius = frame.height / 6
+    }
+}
