@@ -11,8 +11,7 @@
 
 #### 사용 라이브러리
 - RxAlamofire
-- AlamofireObjectMapper
 - Kingfisher
-- Navigation-Toolbar
+- Coadable
 - GVRSDK
 
