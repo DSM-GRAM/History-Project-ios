@@ -7,9 +7,7 @@ target 'History-Project-ios' do
 
   # Pods for History-Project-ios
  pod 'RxAlamofire'
- pod 'ObjectMapper'
  pod 'Kingfisher'
- pod 'Navigation-Toolbar'
  pod 'RxSwift'
  pod 'RxCocoa'
 end
