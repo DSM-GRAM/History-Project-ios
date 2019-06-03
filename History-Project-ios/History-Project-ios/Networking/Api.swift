@@ -16,6 +16,7 @@ protocol ImageProvider {
 
 protocol MainProvider {
     func getInfo(area:String, historySiteCode:String) -> Observable<InfoModel?>
+    func getHistoricalSiteList(area: String) -> Observable<[HistoricalSiteListModel]>
 }
 
 protocol MapProvider {
@@ -27,9 +28,10 @@ protocol QuizProvider {
 }
 
 class MainApi: MainProvider {
+    let httpClient = HTTPClient()
+    
     func getInfo(area: String, historySiteCode: String) -> Observable<InfoModel?> {
         let infoPath = MainAPI.getHistorySiteDetail(area: area, historySiteCode: historySiteCode).getPath()
-        let httpClient = HTTPClient()
         
         return httpClient.get(url: infoPath, params: nil).map { (response, data) -> InfoModel? in
             switch response.statusCode {
@@ -40,6 +42,21 @@ class MainApi: MainProvider {
                 return model
             default : return nil
             }
+        }
+    }
+    
+    func getHistoricalSiteList(area: String) -> Observable<[HistoricalSiteListModel]> {
+        return httpClient.get(url: MainAPI.getHistorySiteList(area: area).getPath(),
+                              params: nil).map { (response, data) -> [HistoricalSiteListModel] in
+                                
+                                if response.statusCode == 200 {
+                                    guard let model = try? JSONDecoder().decode([HistoricalSiteListModel].self, from: data) else {
+                                        print("ERROR")
+                                        return []
+                                    }
+                                    return model
+                                }
+                                return []
         }
     }
 }
