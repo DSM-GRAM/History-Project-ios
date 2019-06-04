@@ -76,12 +76,17 @@ class InfoVC: UIViewController{
             switch state {
             case .goSiteList :
                 self.navigationController?.popViewController(animated: true)
+            case .home :
+                self.navigationController?.popToRootViewController(animated: true)
+            case .next :
+                self.performSegue(withIdentifier: "goMap", sender: nil)
             default : break
             }
         }).disposed(by: disposeBag)
     }
     
     func uiConfigure() {
+        extraTextTextView.isScrollEnabled = false
         textTextView.isScrollEnabled = false
         explainTextView.isScrollEnabled = false
         
@@ -94,11 +99,24 @@ class InfoVC: UIViewController{
     }
     
     @IBAction func upAction(_ sender: UISwipeGestureRecognizer) {
-        
+        if toolBarImageView.frame.height == 240 {
+            UIView.animate(withDuration: 0.7) { [weak self] in
+                guard let strongSelf = self else {return}
+                strongSelf.toolBarImageView.frame = CGRect(x: 0, y: 0, width: strongSelf.toolBarImageView.frame.width, height: strongSelf.toolBarImageView.frame.height - 160)
+                strongSelf.scrollView.frame = CGRect(x: 0, y: 80, width: strongSelf.scrollView.frame.width, height: strongSelf.scrollView.frame.height + 160)
+            }
+        }
     }
     
     @IBAction func downAction(_ sender: UISwipeGestureRecognizer) {
         
+        if toolBarImageView.frame.height == 80 {
+            UIView.animate(withDuration: 0.7) { [weak self] in
+                guard let strongSelf = self else {return}
+                strongSelf.toolBarImageView.frame = CGRect(x: 0, y: 0, width: strongSelf.toolBarImageView.frame.width, height: strongSelf.toolBarImageView.frame.height + 160)
+                strongSelf.scrollView.frame = CGRect(x: 0, y: 240, width: strongSelf.scrollView.frame.width, height: strongSelf.scrollView.frame.height - 160)
+            }
+        }
     }
 }
 
