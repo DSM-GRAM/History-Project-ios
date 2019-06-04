@@ -24,6 +24,16 @@ class RoundButton: UIButton {
 }
 
 class RoundImageView: UIImageView {
+    override func awakeFromNib() {
+        setShape()
+    }
+    
+    func setShape(){
+        layer.cornerRadius = frame.height / 2
+    }
+}
+
+class Round6ImageView: UIImageView {
     
     override func awakeFromNib() {
         setShape()
