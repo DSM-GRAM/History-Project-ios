@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SBz-UX-XZQ">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="StartVC" customModule="History_Project_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="startBackgroundImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="E8a-pR-luI">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7L-V9-hR4" customClass="RoundButton" customModule="History_Project_ios" customModuleProvider="target">
-                                <rect key="frame" x="35" y="493" width="51" height="30"/>
+                                <rect key="frame" x="35" y="562" width="90" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8tX-H6-FwO"/>
@@ -34,7 +34,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVK-X5-CoB" customClass="RoundButton" customModule="History_Project_ios" customModuleProvider="target">
-                                <rect key="frame" x="86" y="413" width="51" height="30"/>
+                                <rect key="frame" x="86" y="482" width="90" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Tdg-vE-8qn"/>
@@ -76,22 +76,22 @@
             <objects>
                 <viewController id="SSU-rL-dfG" customClass="HistoricalSiteListVC" customModule="History_Project_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M1z-VR-jCb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" indicatorStyle="white" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dYf-Na-zZk">
-                                <rect key="frame" x="0.0" y="74" width="375" height="593"/>
+                                <rect key="frame" x="0.0" y="74" width="414" height="662"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="2Wp-Sl-TjD" customClass="HistoricalSiteListCell" customModule="History_Project_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="140"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Wp-Sl-TjD" id="jhM-ZB-Otu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="prK-cp-AQO">
-                                                    <rect key="frame" x="10" y="0.0" width="355" height="120"/>
+                                                    <rect key="frame" x="10" y="0.0" width="394" height="120"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                             <integer key="value" value="10"/>
@@ -99,7 +99,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hud-1Y-4HF">
-                                                    <rect key="frame" x="10" y="0.0" width="355" height="120"/>
+                                                    <rect key="frame" x="10" y="0.0" width="394" height="120"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -108,13 +108,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoF-un-ufZ">
-                                                    <rect key="frame" x="35" y="33" width="50" height="24"/>
+                                                    <rect key="frame" x="40" y="33" width="50" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef6-rz-9PB">
-                                                    <rect key="frame" x="35" y="65" width="58" height="20"/>
+                                                    <rect key="frame" x="40" y="65" width="58" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -379,7 +379,7 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7s-Ef-z4O" customClass="RoundButton" customModule="History_Project_ios" customModuleProvider="target">
-                                <rect key="frame" x="222.5" y="940" width="40" height="40"/>
+                                <rect key="frame" x="222.66666666666666" y="940" width="39.999999999999972" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="CG8-nU-Ve1"/>
@@ -389,7 +389,7 @@
                                 <state key="normal" image="right-arrow.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kxg-Zt-umQ" customClass="RoundButton" customModule="History_Project_ios" customModuleProvider="target">
-                                <rect key="frame" x="167.5" y="940" width="40" height="40"/>
+                                <rect key="frame" x="167.66666666666666" y="940" width="40" height="40"/>
                                 <color key="backgroundColor" red="0.16470588235294117" green="0.11372549019607843" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="LPg-Ji-KnR"/>
@@ -421,14 +421,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3td-2A-VhM"/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="1Ak-Km-Avq" appends="YES" id="qxo-gK-ml7"/>
-                            <outletCollection property="gestureRecognizers" destination="CLq-I0-avM" appends="YES" id="ntb-NC-kN1"/>
+                            <outletCollection property="gestureRecognizers" destination="Yzx-YP-H6b" appends="YES" id="ykW-ZV-OQW"/>
+                            <outletCollection property="gestureRecognizers" destination="hNQ-L8-iee" appends="YES" id="zRd-ve-xpa"/>
                         </connections>
                     </view>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="collectionView" destination="Ryk-gz-END" id="wkS-Lg-C7c"/>
-                        <outlet property="downGesture" destination="CLq-I0-avM" id="SPE-Xf-l7O"/>
+                        <outlet property="downGesture" destination="hNQ-L8-iee" id="wwl-g1-yxU"/>
                         <outlet property="explainTextView" destination="Zli-bB-0sP" id="sZ4-8N-yrW"/>
                         <outlet property="extraTextImageView" destination="d9k-rq-70T" id="Ndp-Jm-Oqk"/>
                         <outlet property="extraTextTextView" destination="bwX-UK-QMs" id="iHA-H3-plz"/>
@@ -441,19 +441,21 @@
                         <outlet property="textTextView" destination="3RZ-RK-KSm" id="zqB-nb-Jf3"/>
                         <outlet property="toolBarImageView" destination="MIt-NB-dzE" id="0OV-8J-4o3"/>
                         <outlet property="toolBarSiteName" destination="UNu-R6-zHp" id="DWq-rT-EGr"/>
-                        <outlet property="upGesture" destination="1Ak-Km-Avq" id="iBa-X4-LCA"/>
+                        <outlet property="upGesture" destination="Yzx-YP-H6b" id="VHM-Q3-9Ld"/>
                         <segue destination="VIx-4l-VXY" kind="show" identifier="goMap" id="W3T-Zc-dJB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0xh-A5-iVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="up" id="1Ak-Km-Avq">
+                <swipeGestureRecognizer direction="up" id="Yzx-YP-H6b">
                     <connections>
-                        <action selector="upAction:" destination="Lyf-Ae-ibS" id="Oc2-Te-qly"/>
+                        <action selector="upAction:" destination="Lyf-Ae-ibS" id="0cj-Tz-qAx"/>
+                        <outlet property="delegate" destination="Lyf-Ae-ibS" id="Ax0-Pl-zCw"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="down" id="CLq-I0-avM">
+                <swipeGestureRecognizer direction="down" id="hNQ-L8-iee">
                     <connections>
-                        <action selector="downAction:" destination="Lyf-Ae-ibS" id="alg-kc-ipG"/>
+                        <action selector="downAction:" destination="Lyf-Ae-ibS" id="PHQ-zV-1Tg"/>
+                        <outlet property="delegate" destination="Lyf-Ae-ibS" id="8cq-DT-6Qy"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -464,14 +466,14 @@
             <objects>
                 <viewController id="VIx-4l-VXY" customClass="MapVC" customModule="History_Project_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4oV-lf-yiq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tzl-5j-Mcd">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치알아보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8L-yT-3mV">
-                                <rect key="frame" x="109.5" y="104" width="156" height="36"/>
+                                <rect key="frame" x="129" y="104" width="156" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -499,7 +501,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SBz-UX-XZQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YBH-MC-Rxm">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

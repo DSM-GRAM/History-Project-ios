@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 import Kingfisher
 
-class InfoVC: UIViewController{
+class InfoVC: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet var upGesture: UISwipeGestureRecognizer!
     @IBOutlet var downGesture: UISwipeGestureRecognizer!
@@ -117,6 +117,10 @@ class InfoVC: UIViewController{
                 strongSelf.scrollView.frame = CGRect(x: 0, y: 240, width: strongSelf.scrollView.frame.width, height: strongSelf.scrollView.frame.height - 160)
             }
         }
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool{
+        return true
     }
 }
 
