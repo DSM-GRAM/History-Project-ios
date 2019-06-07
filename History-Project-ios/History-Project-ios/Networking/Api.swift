@@ -8,12 +8,14 @@
 
 import Foundation
 import RxSwift
+import RxAlamofire
 
 protocol ImageProvider {
     
 }
 
 protocol MainProvider {
+    func getInfo(area:String, historySiteCode:String) -> Observable<InfoModel?>
     func getHistoricalSiteList(area: String) -> Observable<[HistoricalSiteListModel]>
 }
 
@@ -26,8 +28,22 @@ protocol QuizProvider {
 }
 
 class MainApi: MainProvider {
-    
     let httpClient = HTTPClient()
+    
+    func getInfo(area: String, historySiteCode: String) -> Observable<InfoModel?> {
+        let infoPath = MainAPI.getHistorySiteDetail(area: area, historySiteCode: historySiteCode).getPath()
+        
+        return httpClient.get(url: infoPath, params: nil).map { (response, data) -> InfoModel? in
+            switch response.statusCode {
+            case 200 :
+                guard let model = try? JSONDecoder().decode(InfoModel.self, from: data) else {
+                    return nil
+                }
+                return model
+            default : return nil
+            }
+        }
+    }
     
     func getHistoricalSiteList(area: String) -> Observable<[HistoricalSiteListModel]> {
         return httpClient.get(url: MainAPI.getHistorySiteList(area: area).getPath(),

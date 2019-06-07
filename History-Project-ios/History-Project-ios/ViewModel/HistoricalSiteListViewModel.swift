@@ -21,7 +21,7 @@ class HistoricalSiteListViewModel: ViewModelType {
     
     struct Output {
         let list: Driver<[HistoricalSiteListModel]>
-        let selectedSiteCode: Driver<String>
+        let selectedSiteCodeAndName: Driver<(String, String)>
         let area: Driver<String>
     }
     
@@ -31,10 +31,10 @@ class HistoricalSiteListViewModel: ViewModelType {
             return strongSelf.api.getHistoricalSiteList(area: area)
         }.asDriver(onErrorJustReturn: [])
         
-        let selectedSiteCode = Observable.combineLatest(input.selectedIndex.asObservable(), list.asObservable(), resultSelector: { (index, data) in
+        let selectedSiteCodeAndName = Observable.combineLatest(input.selectedIndex.asObservable(), list.asObservable(), resultSelector: { (index, data) in
             
-            return data[index.row].code
-        }).asDriver(onErrorJustReturn: "")
+            return (data[index.row].code, data[index.row].name)
+        }).asDriver(onErrorJustReturn: ("",""))
         
         let area = input.area.asObservable().map { area -> String in
             switch area {
@@ -44,6 +44,6 @@ class HistoricalSiteListViewModel: ViewModelType {
             }
         }.asDriver(onErrorJustReturn: "")
         
-        return Output(list: list, selectedSiteCode: selectedSiteCode, area: area)
+        return Output(list: list, selectedSiteCodeAndName: selectedSiteCodeAndName, area: area)
     }
 }
