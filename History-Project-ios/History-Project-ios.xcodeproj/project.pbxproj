@@ -18,10 +18,13 @@
 		372162AB229ACF56001D66CD /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372162AA229ACF56001D66CD /* InfoVC.swift */; };
 		372162B2229D8249001D66CD /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372162B1229D8249001D66CD /* Base.swift */; };
 		37426C4422A401BF0031AB01 /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37426C4322A401BF0031AB01 /* InfoModel.swift */; };
-		37426C4E22A544690031AB01 /* left-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 37426C4B22A544680031AB01 /* left-arrow.png */; };
-		37426C4F22A544690031AB01 /* right-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 37426C4C22A544680031AB01 /* right-arrow.png */; };
-		37426C5022A544690031AB01 /* home-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 37426C4D22A544690031AB01 /* home-button.png */; };
+		37426C4E22A544690031AB01 /* backToList.png in Resources */ = {isa = PBXBuildFile; fileRef = 37426C4B22A544680031AB01 /* backToList.png */; };
+		37426C4F22A544690031AB01 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 37426C4C22A544680031AB01 /* next.png */; };
+		37426C5022A544690031AB01 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 37426C4D22A544690031AB01 /* home.png */; };
 		37426C5222A5F3460031AB01 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37426C5122A5F3460031AB01 /* MapVC.swift */; };
+		37426C9A22AA96000031AB01 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 37426C9922AA96000031AB01 /* back.png */; };
+		37426C9C22AA9EE40031AB01 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37426C9B22AA9EE40031AB01 /* MapModel.swift */; };
+		37426C9E22AB98A70031AB01 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37426C9D22AB98A70031AB01 /* MapViewModel.swift */; };
 		3769F59C227350EC00EDF795 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3769F59B227350EC00EDF795 /* AppDelegate.swift */; };
 		3769F5A1227350EC00EDF795 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3769F59F227350EC00EDF795 /* Main.storyboard */; };
 		3769F5A3227350EE00EDF795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3769F5A2227350EE00EDF795 /* Assets.xcassets */; };
@@ -51,10 +54,13 @@
 		372162AD229ADC42001D66CD /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
 		372162B1229D8249001D66CD /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		37426C4322A401BF0031AB01 /* InfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
-		37426C4B22A544680031AB01 /* left-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-arrow.png"; sourceTree = "<group>"; };
-		37426C4C22A544680031AB01 /* right-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right-arrow.png"; sourceTree = "<group>"; };
-		37426C4D22A544690031AB01 /* home-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-button.png"; sourceTree = "<group>"; };
+		37426C4B22A544680031AB01 /* backToList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backToList.png; sourceTree = "<group>"; };
+		37426C4C22A544680031AB01 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		37426C4D22A544690031AB01 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		37426C5122A5F3460031AB01 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		37426C9922AA96000031AB01 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		37426C9B22AA9EE40031AB01 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		37426C9D22AB98A70031AB01 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		3769F598227350EC00EDF795 /* History-Project-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "History-Project-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3769F59B227350EC00EDF795 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3769F5A0227350EC00EDF795 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -172,8 +178,9 @@
 		C90C5AB4229E5BC0003EB3C9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				37426C4322A401BF0031AB01 /* InfoModel.swift */,
 				C90C5AB5229E5BD1003EB3C9 /* HistoricalSiteListModel.swift */,
+				37426C4322A401BF0031AB01 /* InfoModel.swift */,
+				37426C9B22AA9EE40031AB01 /* MapModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,8 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				C979E968228D400C00210E25 /* StartVC.swift */,
-				372162AA229ACF56001D66CD /* InfoVC.swift */,
 				C90C5AB0229E59DB003EB3C9 /* HistoricalSiteListVC.swift */,
+				372162AA229ACF56001D66CD /* InfoVC.swift */,
 				37426C5122A5F3460031AB01 /* MapVC.swift */,
 			);
 			path = VC;
@@ -200,10 +207,11 @@
 		C990617C2296AA4200FBAB64 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				37426C9922AA96000031AB01 /* back.png */,
 				C990617D2296AA5300FBAB64 /* startBackgroundImage.png */,
-				37426C4D22A544690031AB01 /* home-button.png */,
-				37426C4B22A544680031AB01 /* left-arrow.png */,
-				37426C4C22A544680031AB01 /* right-arrow.png */,
+				37426C4D22A544690031AB01 /* home.png */,
+				37426C4B22A544680031AB01 /* backToList.png */,
+				37426C4C22A544680031AB01 /* next.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -222,8 +230,9 @@
 			isa = PBXGroup;
 			children = (
 				C99061832296BA9200FBAB64 /* StartViewModel.swift */,
-				372162A8229ACEF9001D66CD /* InfoViewModel.swift */,
 				C90C5AB2229E5A52003EB3C9 /* HistoricalSiteListViewModel.swift */,
+				372162A8229ACEF9001D66CD /* InfoViewModel.swift */,
+				37426C9D22AB98A70031AB01 /* MapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -240,6 +249,7 @@
 				3769F595227350EC00EDF795 /* Frameworks */,
 				3769F596227350EC00EDF795 /* Resources */,
 				EDE96ED456DF5224052F5592 /* [CP] Embed Pods Frameworks */,
+				C220AC44A704DDF579873DA1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -290,11 +300,12 @@
 			files = (
 				C990617E2296AA5300FBAB64 /* startBackgroundImage.png in Resources */,
 				3769F5A6227350EE00EDF795 /* LaunchScreen.storyboard in Resources */,
-				37426C4F22A544690031AB01 /* right-arrow.png in Resources */,
+				37426C9A22AA96000031AB01 /* back.png in Resources */,
+				37426C4F22A544690031AB01 /* next.png in Resources */,
 				3769F5A3227350EE00EDF795 /* Assets.xcassets in Resources */,
 				3769F5A1227350EC00EDF795 /* Main.storyboard in Resources */,
-				37426C5022A544690031AB01 /* home-button.png in Resources */,
-				37426C4E22A544690031AB01 /* left-arrow.png in Resources */,
+				37426C5022A544690031AB01 /* home.png in Resources */,
+				37426C4E22A544690031AB01 /* backToList.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +332,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C220AC44A704DDF579873DA1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-History-Project-ios/Pods-History-Project-ios-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-History-Project-ios/Pods-History-Project-ios-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-History-Project-ios/Pods-History-Project-ios-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EDE96ED456DF5224052F5592 /* [CP] Embed Pods Frameworks */ = {
@@ -351,6 +379,7 @@
 				372162A6228C4599001D66CD /* QuizAPI.swift in Sources */,
 				C90C5AB1229E59DB003EB3C9 /* HistoricalSiteListVC.swift in Sources */,
 				37216299228C44CE001D66CD /* Api.swift in Sources */,
+				37426C9C22AA9EE40031AB01 /* MapModel.swift in Sources */,
 				3721629B228C44EF001D66CD /* HTTPClient.swift in Sources */,
 				37426C5222A5F3460031AB01 /* MapVC.swift in Sources */,
 				C90C5AB3229E5A52003EB3C9 /* HistoricalSiteListViewModel.swift in Sources */,
@@ -363,6 +392,7 @@
 				372162AB229ACF56001D66CD /* InfoVC.swift in Sources */,
 				C9FAC4222296D7FF000FCE88 /* ViewModelType.swift in Sources */,
 				37426C4422A401BF0031AB01 /* InfoModel.swift in Sources */,
+				37426C9E22AB98A70031AB01 /* MapViewModel.swift in Sources */,
 				C90C5AB6229E5BD1003EB3C9 /* HistoricalSiteListModel.swift in Sources */,
 				372162A4228C458D001D66CD /* MapAPI.swift in Sources */,
 				C979E969228D400C00210E25 /* StartVC.swift in Sources */,
