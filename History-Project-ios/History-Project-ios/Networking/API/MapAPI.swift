@@ -8,8 +8,7 @@
 
 import Foundation
 
-public enum MapAPI: API {
-    
+public enum MapAPI:API {
     case getMap(historySiteCode: String)
     
     func getPath() -> String {
