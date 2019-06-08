@@ -20,7 +20,7 @@ protocol MainProvider {
 }
 
 protocol MapProvider {
-    
+    func getMap(historySiteCode:String) -> Observable<MapModel?>
 }
 
 protocol QuizProvider {
@@ -58,5 +58,20 @@ class MainApi: MainProvider {
                                 }
                                 return []
         }
+    }
+}
+
+class MapApi: MapProvider {
+    let httpClient = HTTPClient()
+    
+    func getMap(historySiteCode: String) -> Observable<MapModel?> {
+        return httpClient.get(url: MapAPI.getMap(historySiteCode: historySiteCode).getPath(), params: nil)
+            .map({ (response, data) -> MapModel? in
+                if response.statusCode == 200 {
+                    guard let model = try? JSONDecoder().decode(MapModel.self, from: data) else {return nil}
+                    return model
+                }
+                return nil
+            })
     }
 }
