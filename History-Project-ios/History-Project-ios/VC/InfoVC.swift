@@ -55,6 +55,17 @@ class InfoVC: UIViewController, UIGestureRecognizerDelegate {
         uiConfigure()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goMap" {
+            let vc = segue.destination as! MapVC
+            vc.historySiteCode.accept(historicalSiteCode.value)
+        }
+    }
+    
     func binding(output: InfoViewModel.Output) {
         output.explain.drive(explainTextView.rx.text).disposed(by: disposeBag)
         output.extraText.drive(extraTextTextView.rx.text).disposed(by: disposeBag)
@@ -92,10 +103,6 @@ class InfoVC: UIViewController, UIGestureRecognizerDelegate {
         
         siteNameLbl.text = historicalSiteName
         toolBarSiteName.text = historicalSiteName
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = true
     }
     
     @IBAction func upAction(_ sender: UISwipeGestureRecognizer) {
