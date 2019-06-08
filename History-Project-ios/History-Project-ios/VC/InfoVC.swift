@@ -39,8 +39,9 @@ class InfoVC: UIViewController, UIGestureRecognizerDelegate {
     var output: InfoViewModel.Output!
     
     var area: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
-    var historicalSiteCode: BehaviorRelay<String>! = BehaviorRelay<String>(value: "")
+    var historicalSiteCode: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
     var historicalSiteName: String = ""
+    var nextImagePath: String = ""
     
     let disposeBag = DisposeBag()
     
@@ -63,6 +64,9 @@ class InfoVC: UIViewController, UIGestureRecognizerDelegate {
         if segue.identifier == "goMap" {
             let vc = segue.destination as! MapVC
             vc.historySiteCode.accept(historicalSiteCode.value)
+            vc.backgroudImgPath = nextImagePath
+            vc.historySiteName = historicalSiteName
+            vc.historySiteLocation = locationLbl.text ?? ""
         }
     }
     
@@ -71,6 +75,7 @@ class InfoVC: UIViewController, UIGestureRecognizerDelegate {
         output.extraText.drive(extraTextTextView.rx.text).disposed(by: disposeBag)
         output.imagePath.drive(onNext: { [weak self] (imgPath) in
             guard let strongSelf = self else { return }
+            strongSelf.nextImagePath = imgPath
             strongSelf.toolBarImageView.kf.setImage(with: URL(string: imgPath),
                                                     options: [.processor(ResizingImageProcessor(referenceSize: CGSize(width: 75, height: 48), mode: .aspectFill))])
             strongSelf.extraTextImageView.kf.setImage(with: URL(string: imgPath),
@@ -83,14 +88,16 @@ class InfoVC: UIViewController, UIGestureRecognizerDelegate {
             cell.configure(infoModel: data)
         }.disposed(by: disposeBag)
         
-        output.goVC.asDriver().drive(onNext: { (state) in
+        output.goVC.asDriver().drive(onNext: { [weak self] (state) in
+            guard let strongSelf = self else { return }
+            
             switch state {
             case .goSiteList :
-                self.navigationController?.popViewController(animated: true)
+                strongSelf.navigationController?.popViewController(animated: true)
             case .home :
-                self.navigationController?.popToRootViewController(animated: true)
+                strongSelf.navigationController?.popToRootViewController(animated: true)
             case .next :
-                self.performSegue(withIdentifier: "goMap", sender: nil)
+                strongSelf.performSegue(withIdentifier: "goMap", sender: nil)
             default : break
             }
         }).disposed(by: disposeBag)
