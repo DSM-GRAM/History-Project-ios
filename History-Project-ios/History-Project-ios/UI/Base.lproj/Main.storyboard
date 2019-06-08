@@ -469,7 +469,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tzl-5j-Mcd">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tzl-5j-Mcd">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치알아보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8L-yT-3mV">
@@ -478,17 +478,25 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ri8-YC-nWq">
-                                <rect key="frame" x="20" y="170" width="335" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ri8-YC-nWq" customClass="Round3Button" customModule="History_Project_ios" customModuleProvider="target">
+                                <rect key="frame" x="30" y="160" width="315" height="100"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Gzc-3A-LBC"/>
+                                    <constraint firstAttribute="height" constant="100" id="Gzc-3A-LBC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="50"/>
                                 <state key="normal" title="GOOGLE MAP">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsM-UJ-iG3">
+                                <rect key="frame" x="30" y="210" width="315" height="315"/>
+                                <color key="backgroundColor" white="1" alpha="0.46200770547945208" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hsM-UJ-iG3" secondAttribute="height" multiplier="1:1" id="oSH-So-KxB"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E6-vl-hbs" customClass="RoundButton" customModule="History_Project_ios" customModuleProvider="target">
                                 <rect key="frame" x="167.5" y="607" width="40" height="40"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.1137254902" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -513,10 +521,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="hsM-UJ-iG3" firstAttribute="leading" secondItem="ri8-YC-nWq" secondAttribute="leading" id="10f-vI-Ux0"/>
                             <constraint firstItem="elr-g7-xYj" firstAttribute="trailing" secondItem="8E6-vl-hbs" secondAttribute="leading" constant="-15" id="Bzg-As-H1O"/>
-                            <constraint firstItem="ri8-YC-nWq" firstAttribute="top" secondItem="G8L-yT-3mV" secondAttribute="bottom" constant="30" id="DN0-yk-8Of"/>
+                            <constraint firstItem="ri8-YC-nWq" firstAttribute="top" secondItem="G8L-yT-3mV" secondAttribute="bottom" constant="20" id="DN0-yk-8Of"/>
                             <constraint firstItem="tzl-5j-Mcd" firstAttribute="leading" secondItem="Ube-S5-V9D" secondAttribute="leading" id="Eg7-SP-EcW"/>
-                            <constraint firstItem="ri8-YC-nWq" firstAttribute="leading" secondItem="Ube-S5-V9D" secondAttribute="leading" constant="20" id="NCe-V8-IgY"/>
+                            <constraint firstItem="hsM-UJ-iG3" firstAttribute="trailing" secondItem="ri8-YC-nWq" secondAttribute="trailing" id="HLz-gu-lmP"/>
+                            <constraint firstItem="hsM-UJ-iG3" firstAttribute="top" secondItem="ri8-YC-nWq" secondAttribute="bottom" constant="-50" id="HNJ-IJ-cZK"/>
+                            <constraint firstItem="ri8-YC-nWq" firstAttribute="leading" secondItem="Ube-S5-V9D" secondAttribute="leading" constant="30" id="NCe-V8-IgY"/>
                             <constraint firstItem="elr-g7-xYj" firstAttribute="bottom" secondItem="8E6-vl-hbs" secondAttribute="bottom" id="Qmu-At-nCU"/>
                             <constraint firstItem="Ube-S5-V9D" firstAttribute="trailing" secondItem="tzl-5j-Mcd" secondAttribute="trailing" id="Uea-UX-qsG"/>
                             <constraint firstItem="G8L-yT-3mV" firstAttribute="top" secondItem="Ube-S5-V9D" secondAttribute="top" constant="40" id="WgC-td-L1h"/>
@@ -524,15 +535,22 @@
                             <constraint firstItem="8E6-vl-hbs" firstAttribute="centerX" secondItem="4oV-lf-yiq" secondAttribute="centerX" id="dRa-wr-Gmr"/>
                             <constraint firstItem="tzl-5j-Mcd" firstAttribute="top" secondItem="Ube-S5-V9D" secondAttribute="top" id="hCb-Nw-OHM"/>
                             <constraint firstItem="Ube-S5-V9D" firstAttribute="bottom" secondItem="tzl-5j-Mcd" secondAttribute="bottom" id="kO1-Xj-zcS"/>
-                            <constraint firstItem="Ube-S5-V9D" firstAttribute="trailing" secondItem="ri8-YC-nWq" secondAttribute="trailing" constant="20" id="vYS-cC-tH6"/>
+                            <constraint firstItem="Ube-S5-V9D" firstAttribute="trailing" secondItem="ri8-YC-nWq" secondAttribute="trailing" constant="30" id="vYS-cC-tH6"/>
                             <constraint firstItem="G8L-yT-3mV" firstAttribute="centerX" secondItem="4oV-lf-yiq" secondAttribute="centerX" id="wUf-NR-eCs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ube-S5-V9D"/>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="elr-g7-xYj" id="OhC-ue-EMU"/>
+                        <outlet property="backgroundImageView" destination="tzl-5j-Mcd" id="JDd-6K-PmB"/>
+                        <outlet property="googlemapBtn" destination="ri8-YC-nWq" id="Pwt-Jt-TNq"/>
+                        <outlet property="homeBtn" destination="8E6-vl-hbs" id="n1K-MC-5j9"/>
+                        <outlet property="mapBackgroundView" destination="hsM-UJ-iG3" id="IE1-fH-fn2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjc-W6-dd4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3596" y="112.89355322338831"/>
+            <point key="canvasLocation" x="3594.375" y="112.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fy3-f7-H6i">
