@@ -9,8 +9,8 @@
 import Foundation
 
 struct MapModel: Codable {
-    let latitude: String
-    let longitude: String
+    let latitude: Double
+    let longitude: Double
     
     enum CodingKeys: String, CodingKey {
         case latitude = "lat"
