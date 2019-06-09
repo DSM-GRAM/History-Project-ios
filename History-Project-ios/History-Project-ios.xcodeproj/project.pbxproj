@@ -25,6 +25,8 @@
 		37426C9A22AA96000031AB01 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 37426C9922AA96000031AB01 /* back.png */; };
 		37426C9C22AA9EE40031AB01 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37426C9B22AA9EE40031AB01 /* MapModel.swift */; };
 		37426C9E22AB98A70031AB01 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37426C9D22AB98A70031AB01 /* MapViewModel.swift */; };
+		37426CA422AD41720031AB01 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 37426CA322AD41720031AB01 /* edit.png */; };
+		37426CA622AD42170031AB01 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37426CA522AD42170031AB01 /* QuizVC.swift */; };
 		3769F59C227350EC00EDF795 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3769F59B227350EC00EDF795 /* AppDelegate.swift */; };
 		3769F5A1227350EC00EDF795 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3769F59F227350EC00EDF795 /* Main.storyboard */; };
 		3769F5A3227350EE00EDF795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3769F5A2227350EE00EDF795 /* Assets.xcassets */; };
@@ -61,6 +63,8 @@
 		37426C9922AA96000031AB01 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		37426C9B22AA9EE40031AB01 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		37426C9D22AB98A70031AB01 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		37426CA322AD41720031AB01 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
+		37426CA522AD42170031AB01 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
 		3769F598227350EC00EDF795 /* History-Project-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "History-Project-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3769F59B227350EC00EDF795 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3769F5A0227350EC00EDF795 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				C90C5AB0229E59DB003EB3C9 /* HistoricalSiteListVC.swift */,
 				372162AA229ACF56001D66CD /* InfoVC.swift */,
 				37426C5122A5F3460031AB01 /* MapVC.swift */,
+				37426CA522AD42170031AB01 /* QuizVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 		C990617C2296AA4200FBAB64 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				37426CA322AD41720031AB01 /* edit.png */,
 				37426C9922AA96000031AB01 /* back.png */,
 				C990617D2296AA5300FBAB64 /* startBackgroundImage.png */,
 				37426C4D22A544690031AB01 /* home.png */,
@@ -300,6 +306,7 @@
 			files = (
 				C990617E2296AA5300FBAB64 /* startBackgroundImage.png in Resources */,
 				3769F5A6227350EE00EDF795 /* LaunchScreen.storyboard in Resources */,
+				37426CA422AD41720031AB01 /* edit.png in Resources */,
 				37426C9A22AA96000031AB01 /* back.png in Resources */,
 				37426C4F22A544690031AB01 /* next.png in Resources */,
 				3769F5A3227350EE00EDF795 /* Assets.xcassets in Resources */,
@@ -393,6 +400,7 @@
 				C9FAC4222296D7FF000FCE88 /* ViewModelType.swift in Sources */,
 				37426C4422A401BF0031AB01 /* InfoModel.swift in Sources */,
 				37426C9E22AB98A70031AB01 /* MapViewModel.swift in Sources */,
+				37426CA622AD42170031AB01 /* QuizVC.swift in Sources */,
 				C90C5AB6229E5BD1003EB3C9 /* HistoricalSiteListModel.swift in Sources */,
 				372162A4228C458D001D66CD /* MapAPI.swift in Sources */,
 				C979E969228D400C00210E25 /* StartVC.swift in Sources */,
