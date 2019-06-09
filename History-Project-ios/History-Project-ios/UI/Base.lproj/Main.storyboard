@@ -518,7 +518,7 @@
                                 <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" image="back.png"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdP-Uh-OGr" customClass="RoundButton" customModule="History_Project_ios" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdP-Uh-OGr" customClass="RoundButton" customModule="History_Project_ios" customModuleProvider="target">
                                 <rect key="frame" x="222.5" y="607" width="40" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -538,6 +538,7 @@
                             <constraint firstItem="ZdP-Uh-OGr" firstAttribute="leading" secondItem="8E6-vl-hbs" secondAttribute="trailing" constant="15" id="GAy-Zl-tBa"/>
                             <constraint firstItem="hsM-UJ-iG3" firstAttribute="trailing" secondItem="ri8-YC-nWq" secondAttribute="trailing" id="HLz-gu-lmP"/>
                             <constraint firstItem="hsM-UJ-iG3" firstAttribute="top" secondItem="ri8-YC-nWq" secondAttribute="bottom" constant="-50" id="HNJ-IJ-cZK"/>
+                            <constraint firstItem="ZdP-Uh-OGr" firstAttribute="centerY" secondItem="8E6-vl-hbs" secondAttribute="centerY" id="HhU-Lb-BBL"/>
                             <constraint firstItem="ri8-YC-nWq" firstAttribute="leading" secondItem="Ube-S5-V9D" secondAttribute="leading" constant="30" id="NCe-V8-IgY"/>
                             <constraint firstItem="elr-g7-xYj" firstAttribute="bottom" secondItem="8E6-vl-hbs" secondAttribute="bottom" id="Qmu-At-nCU"/>
                             <constraint firstItem="Ube-S5-V9D" firstAttribute="trailing" secondItem="tzl-5j-Mcd" secondAttribute="trailing" id="Uea-UX-qsG"/>
