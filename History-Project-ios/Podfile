@@ -10,4 +10,5 @@ target 'History-Project-ios' do
  pod 'Kingfisher'
  pod 'RxSwift'
  pod 'RxCocoa'
+ pod 'GoogleMaps'
 end

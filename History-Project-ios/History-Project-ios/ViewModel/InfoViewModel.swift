@@ -52,12 +52,12 @@ class InfoViewModel: ViewModelType {
                 mainApi.getInfo(area: area, historySiteCode: code).subscribe({ model in
                     if let model = model.element {
                         if let model = model {
-                            explain.accept(model.explain ?? "")
-                            extra.accept(model.extra ?? [])
-                            extraText.accept(model.extraText ?? "")
-                            imagePath.accept(model.imagePath ?? "")
-                            location.accept(model.location ?? "")
-                            text.accept(model.text ?? "")
+                            explain.accept(model.explain)
+                            extra.accept(model.extra)
+                            extraText.accept(model.extraText)
+                            imagePath.accept(model.imagePath)
+                            location.accept(model.location)
+                            text.accept(model.text)
                         }
                     }
                 }).disposed(by: strongSelf.disposeBag)

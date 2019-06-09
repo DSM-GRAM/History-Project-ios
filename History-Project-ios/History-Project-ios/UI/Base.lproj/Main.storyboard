@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SBz-UX-XZQ">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="StartVC" customModule="History_Project_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="startBackgroundImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="E8a-pR-luI">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7L-V9-hR4" customClass="RoundButton" customModule="History_Project_ios" customModuleProvider="target">
-                                <rect key="frame" x="35" y="562" width="90" height="30"/>
+                                <rect key="frame" x="35" y="493" width="51" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8tX-H6-FwO"/>
@@ -34,7 +34,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVK-X5-CoB" customClass="RoundButton" customModule="History_Project_ios" customModuleProvider="target">
-                                <rect key="frame" x="86" y="482" width="90" height="30"/>
+                                <rect key="frame" x="86" y="413" width="51" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Tdg-vE-8qn"/>
@@ -76,22 +76,22 @@
             <objects>
                 <viewController id="SSU-rL-dfG" customClass="HistoricalSiteListVC" customModule="History_Project_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M1z-VR-jCb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" indicatorStyle="white" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dYf-Na-zZk">
-                                <rect key="frame" x="0.0" y="74" width="414" height="662"/>
+                                <rect key="frame" x="0.0" y="74" width="375" height="593"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="2Wp-Sl-TjD" customClass="HistoricalSiteListCell" customModule="History_Project_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="140"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Wp-Sl-TjD" id="jhM-ZB-Otu">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="prK-cp-AQO">
-                                                    <rect key="frame" x="10" y="0.0" width="394" height="120"/>
+                                                    <rect key="frame" x="10" y="0.0" width="355" height="120"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                             <integer key="value" value="10"/>
@@ -99,7 +99,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hud-1Y-4HF">
-                                                    <rect key="frame" x="10" y="0.0" width="394" height="120"/>
+                                                    <rect key="frame" x="10" y="0.0" width="355" height="120"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -108,13 +108,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoF-un-ufZ">
-                                                    <rect key="frame" x="40" y="33" width="50" height="24"/>
+                                                    <rect key="frame" x="35" y="33" width="50" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef6-rz-9PB">
-                                                    <rect key="frame" x="40" y="65" width="58" height="20"/>
+                                                    <rect key="frame" x="35" y="65" width="58" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -189,7 +189,7 @@
                                     <constraint firstAttribute="width" secondItem="IBz-88-cN4" secondAttribute="height" multiplier="1:1" id="QAd-z4-W1z"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                <state key="normal" image="left-arrow.png">
+                                <state key="normal" image="backToList.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -379,17 +379,17 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7s-Ef-z4O" customClass="RoundButton" customModule="History_Project_ios" customModuleProvider="target">
-                                <rect key="frame" x="222.66666666666666" y="940" width="39.999999999999972" height="40"/>
+                                <rect key="frame" x="222.5" y="940" width="40" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="CG8-nU-Ve1"/>
                                     <constraint firstAttribute="height" constant="40" id="o3T-g6-bir"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" image="right-arrow.png"/>
+                                <state key="normal" image="next.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kxg-Zt-umQ" customClass="RoundButton" customModule="History_Project_ios" customModuleProvider="target">
-                                <rect key="frame" x="167.66666666666666" y="940" width="40" height="40"/>
+                                <rect key="frame" x="167.5" y="940" width="40" height="40"/>
                                 <color key="backgroundColor" red="0.16470588235294117" green="0.11372549019607843" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="LPg-Ji-KnR"/>
@@ -397,7 +397,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="7"/>
                                 <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" image="home-button.png"/>
+                                <state key="normal" image="home.png"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -466,34 +466,120 @@
             <objects>
                 <viewController id="VIx-4l-VXY" customClass="MapVC" customModule="History_Project_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4oV-lf-yiq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tzl-5j-Mcd">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tzl-5j-Mcd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치알아보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8L-yT-3mV">
-                                <rect key="frame" x="129" y="104" width="156" height="36"/>
+                                <rect key="frame" x="109.5" y="104" width="156" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ri8-YC-nWq" customClass="Round3Button" customModule="History_Project_ios" customModuleProvider="target">
+                                <rect key="frame" x="30" y="160" width="315" height="100"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Gzc-3A-LBC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="50"/>
+                                <state key="normal" title="GOOGLE MAP">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsM-UJ-iG3">
+                                <rect key="frame" x="30" y="210" width="315" height="315"/>
+                                <color key="backgroundColor" white="1" alpha="0.46200770547945208" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hsM-UJ-iG3" secondAttribute="height" multiplier="1:1" id="oSH-So-KxB"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E6-vl-hbs" customClass="RoundButton" customModule="History_Project_ios" customModuleProvider="target">
+                                <rect key="frame" x="167.5" y="607" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.1137254902" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5Jq-L3-Z6m"/>
+                                    <constraint firstAttribute="width" constant="40" id="8eJ-uG-Q0y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="home.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elr-g7-xYj" customClass="RoundButton" customModule="History_Project_ios" customModuleProvider="target">
+                                <rect key="frame" x="112.5" y="607" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dVK-cg-dho"/>
+                                    <constraint firstAttribute="width" constant="40" id="rYq-Qx-xhY"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="back.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdP-Uh-OGr" customClass="RoundButton" customModule="History_Project_ios" customModuleProvider="target">
+                                <rect key="frame" x="222.5" y="607" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="jS1-2k-QzC"/>
+                                    <constraint firstAttribute="width" constant="40" id="sem-9O-RKa"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="edit.png"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="hsM-UJ-iG3" firstAttribute="leading" secondItem="ri8-YC-nWq" secondAttribute="leading" id="10f-vI-Ux0"/>
+                            <constraint firstItem="elr-g7-xYj" firstAttribute="trailing" secondItem="8E6-vl-hbs" secondAttribute="leading" constant="-15" id="Bzg-As-H1O"/>
+                            <constraint firstItem="ri8-YC-nWq" firstAttribute="top" secondItem="G8L-yT-3mV" secondAttribute="bottom" constant="20" id="DN0-yk-8Of"/>
                             <constraint firstItem="tzl-5j-Mcd" firstAttribute="leading" secondItem="Ube-S5-V9D" secondAttribute="leading" id="Eg7-SP-EcW"/>
+                            <constraint firstItem="ZdP-Uh-OGr" firstAttribute="leading" secondItem="8E6-vl-hbs" secondAttribute="trailing" constant="15" id="GAy-Zl-tBa"/>
+                            <constraint firstItem="hsM-UJ-iG3" firstAttribute="trailing" secondItem="ri8-YC-nWq" secondAttribute="trailing" id="HLz-gu-lmP"/>
+                            <constraint firstItem="hsM-UJ-iG3" firstAttribute="top" secondItem="ri8-YC-nWq" secondAttribute="bottom" constant="-50" id="HNJ-IJ-cZK"/>
+                            <constraint firstItem="ZdP-Uh-OGr" firstAttribute="centerY" secondItem="8E6-vl-hbs" secondAttribute="centerY" id="HhU-Lb-BBL"/>
+                            <constraint firstItem="ri8-YC-nWq" firstAttribute="leading" secondItem="Ube-S5-V9D" secondAttribute="leading" constant="30" id="NCe-V8-IgY"/>
+                            <constraint firstItem="elr-g7-xYj" firstAttribute="bottom" secondItem="8E6-vl-hbs" secondAttribute="bottom" id="Qmu-At-nCU"/>
                             <constraint firstItem="Ube-S5-V9D" firstAttribute="trailing" secondItem="tzl-5j-Mcd" secondAttribute="trailing" id="Uea-UX-qsG"/>
                             <constraint firstItem="G8L-yT-3mV" firstAttribute="top" secondItem="Ube-S5-V9D" secondAttribute="top" constant="40" id="WgC-td-L1h"/>
+                            <constraint firstItem="Ube-S5-V9D" firstAttribute="bottom" secondItem="8E6-vl-hbs" secondAttribute="bottom" constant="20" id="Xlu-fG-MM7"/>
+                            <constraint firstItem="8E6-vl-hbs" firstAttribute="centerX" secondItem="4oV-lf-yiq" secondAttribute="centerX" id="dRa-wr-Gmr"/>
                             <constraint firstItem="tzl-5j-Mcd" firstAttribute="top" secondItem="Ube-S5-V9D" secondAttribute="top" id="hCb-Nw-OHM"/>
                             <constraint firstItem="Ube-S5-V9D" firstAttribute="bottom" secondItem="tzl-5j-Mcd" secondAttribute="bottom" id="kO1-Xj-zcS"/>
+                            <constraint firstItem="Ube-S5-V9D" firstAttribute="trailing" secondItem="ri8-YC-nWq" secondAttribute="trailing" constant="30" id="vYS-cC-tH6"/>
                             <constraint firstItem="G8L-yT-3mV" firstAttribute="centerX" secondItem="4oV-lf-yiq" secondAttribute="centerX" id="wUf-NR-eCs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ube-S5-V9D"/>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="elr-g7-xYj" id="OhC-ue-EMU"/>
+                        <outlet property="backgroundImageView" destination="tzl-5j-Mcd" id="JDd-6K-PmB"/>
+                        <outlet property="googlemapBtn" destination="ri8-YC-nWq" id="Pwt-Jt-TNq"/>
+                        <outlet property="homeBtn" destination="8E6-vl-hbs" id="n1K-MC-5j9"/>
+                        <outlet property="mapBackgroundView" destination="hsM-UJ-iG3" id="IE1-fH-fn2"/>
+                        <outlet property="nextBtn" destination="ZdP-Uh-OGr" id="DYg-a9-SOn"/>
+                        <segue destination="maC-lp-7jy" kind="show" identifier="goQuiz" id="rat-dR-roX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjc-W6-dd4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3596" y="113"/>
+            <point key="canvasLocation" x="3594.375" y="112.5"/>
+        </scene>
+        <!--QuizVC-->
+        <scene sceneID="azD-xL-Clx">
+            <objects>
+                <viewController id="maC-lp-7jy" customClass="QuizVC" customModule="History_Project_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NEv-7f-yVS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="OgQ-g6-jGZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9oS-NE-dIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4410" y="108"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fy3-f7-H6i">
@@ -501,7 +587,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SBz-UX-XZQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YBH-MC-Rxm">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -515,9 +601,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="home-button.png" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="left-arrow.png" width="384" height="384"/>
-        <image name="right-arrow.png" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="back.png" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="backToList.png" width="384" height="384"/>
+        <image name="edit.png" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="home.png" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="next.png" width="409.60000610351562" height="409.60000610351562"/>
         <image name="startBackgroundImage.png" width="1440" height="2240"/>
     </resources>
 </document>

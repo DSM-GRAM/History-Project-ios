@@ -39,8 +39,9 @@ class InfoVC: UIViewController, UIGestureRecognizerDelegate {
     var output: InfoViewModel.Output!
     
     var area: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
-    var historicalSiteCode: BehaviorRelay<String>! = BehaviorRelay<String>(value: "")
+    var historicalSiteCode: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
     var historicalSiteName: String = ""
+    var nextImagePath: String = ""
     
     let disposeBag = DisposeBag()
     
@@ -55,13 +56,27 @@ class InfoVC: UIViewController, UIGestureRecognizerDelegate {
         uiConfigure()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goMap" {
+            let vc = segue.destination as! MapVC
+            vc.historySiteCode.accept(historicalSiteCode.value)
+            vc.backgroudImgPath = nextImagePath
+            vc.historySiteName = historicalSiteName
+            vc.historySiteLocation = locationLbl.text ?? ""
+        }
+    }
+    
     func binding(output: InfoViewModel.Output) {
         output.explain.drive(explainTextView.rx.text).disposed(by: disposeBag)
         output.extraText.drive(extraTextTextView.rx.text).disposed(by: disposeBag)
         output.imagePath.drive(onNext: { [weak self] (imgPath) in
             guard let strongSelf = self else { return }
-            strongSelf.toolBarImageView.kf.setImage(with: URL(string: imgPath),
-                                                    options: [.processor(ResizingImageProcessor(referenceSize: CGSize(width: 75, height: 48), mode: .aspectFill))])
+            strongSelf.nextImagePath = imgPath
+            strongSelf.toolBarImageView.kf.setImage(with: URL(string: imgPath))
             strongSelf.extraTextImageView.kf.setImage(with: URL(string: imgPath),
                                                      options: [(.processor(BlurImageProcessor(blurRadius: 4))),.processor(ResizingImageProcessor(referenceSize: CGSize(width: 67, height: 20), mode: .aspectFill))])
         }).disposed(by: disposeBag)
@@ -72,14 +87,16 @@ class InfoVC: UIViewController, UIGestureRecognizerDelegate {
             cell.configure(infoModel: data)
         }.disposed(by: disposeBag)
         
-        output.goVC.asDriver().drive(onNext: { (state) in
+        output.goVC.asDriver().drive(onNext: { [weak self] (state) in
+            guard let strongSelf = self else { return }
+            
             switch state {
             case .goSiteList :
-                self.navigationController?.popViewController(animated: true)
+                strongSelf.navigationController?.popViewController(animated: true)
             case .home :
-                self.navigationController?.popToRootViewController(animated: true)
+                strongSelf.navigationController?.popToRootViewController(animated: true)
             case .next :
-                self.performSegue(withIdentifier: "goMap", sender: nil)
+                strongSelf.performSegue(withIdentifier: "goMap", sender: nil)
             default : break
             }
         }).disposed(by: disposeBag)
@@ -94,16 +111,12 @@ class InfoVC: UIViewController, UIGestureRecognizerDelegate {
         toolBarSiteName.text = historicalSiteName
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = true
-    }
-    
     @IBAction func upAction(_ sender: UISwipeGestureRecognizer) {
         if toolBarImageView.frame.height == 240 {
-            UIView.animate(withDuration: 0.7) { [weak self] in
+            UIView.animate(withDuration: 0.5) { [weak self] in
                 guard let strongSelf = self else {return}
-                strongSelf.toolBarImageView.frame = CGRect(x: 0, y: 0, width: strongSelf.toolBarImageView.frame.width, height: strongSelf.toolBarImageView.frame.height - 160)
-                strongSelf.scrollView.frame = CGRect(x: 0, y: 80, width: strongSelf.scrollView.frame.width, height: strongSelf.scrollView.frame.height + 160)
+                strongSelf.toolBarImageView.frame = CGRect(x: 0, y: strongSelf.toolBarImageView.frame.minY, width: strongSelf.toolBarImageView.frame.width, height: strongSelf.toolBarImageView.frame.height - 160)
+                strongSelf.scrollView.frame = CGRect(x: 0, y: 140, width: strongSelf.scrollView.frame.width, height: strongSelf.scrollView.frame.height + 160)
             }
         }
     }
@@ -111,10 +124,10 @@ class InfoVC: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func downAction(_ sender: UISwipeGestureRecognizer) {
         
         if toolBarImageView.frame.height == 80 {
-            UIView.animate(withDuration: 0.7) { [weak self] in
+            UIView.animate(withDuration: 0.5) { [weak self] in
                 guard let strongSelf = self else {return}
-                strongSelf.toolBarImageView.frame = CGRect(x: 0, y: 0, width: strongSelf.toolBarImageView.frame.width, height: strongSelf.toolBarImageView.frame.height + 160)
-                strongSelf.scrollView.frame = CGRect(x: 0, y: 240, width: strongSelf.scrollView.frame.width, height: strongSelf.scrollView.frame.height - 160)
+                strongSelf.toolBarImageView.frame = CGRect(x: 0, y: strongSelf.toolBarImageView.frame.minY, width: strongSelf.toolBarImageView.frame.width, height: strongSelf.toolBarImageView.frame.height + 160)
+                strongSelf.scrollView.frame = CGRect(x: 0, y: 300, width: strongSelf.scrollView.frame.width, height: strongSelf.scrollView.frame.height - 160)
             }
         }
     }
@@ -130,8 +143,7 @@ class InfoCell: UICollectionViewCell {
     @IBOutlet weak var extraLocationLbl: UILabel!
     
     func configure(infoModel: InfoModel.Extra) {
-        extraImageView.kf.setImage(with: URL(string: infoModel.extraImagePath),
-                                   options: [.processor(ResizingImageProcessor(referenceSize: CGSize(width: 70, height: 75), mode: .aspectFill))])
+        extraImageView.kf.setImage(with: URL(string: infoModel.extraImagePath))
         extraNameLbl.text = infoModel.extraName
         extraLocationLbl.text = infoModel.extraLocation
     }

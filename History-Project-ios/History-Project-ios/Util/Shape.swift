@@ -23,6 +23,20 @@ class RoundButton: UIButton {
     }
 }
 
+class Round3Button: UIButton {
+    
+    override func awakeFromNib() {
+        setShape()
+    }
+    
+    func setShape(){
+        layer.cornerRadius = frame.height / 3
+        layer.shadowColor = UIColor.black.withAlphaComponent(0.3).cgColor
+        layer.shadowOpacity = 1
+        layer.shadowOffset = CGSize.init(width: 1, height: 1)
+    }
+}
+
 class RoundImageView: UIImageView {
     override func awakeFromNib() {
         setShape()
@@ -43,3 +57,4 @@ class Round6ImageView: UIImageView {
         layer.cornerRadius = frame.height / 6
     }
 }
+
