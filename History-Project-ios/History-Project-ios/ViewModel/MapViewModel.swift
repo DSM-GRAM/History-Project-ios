@@ -17,6 +17,7 @@ class MapViewModel: ViewModelType {
         let historySiteCode: BehaviorRelay<String>
         let clickHome: Signal<Void>
         let clickBack: Signal<Void>
+        let clickNext: Signal<Void>
     }
     
     struct Output {
@@ -46,6 +47,10 @@ class MapViewModel: ViewModelType {
         input.clickBack.asObservable().subscribe { _ in
             goVC.accept(.back)
         }.disposed(by: disposeBag)
+        
+        input.clickNext.asObservable().subscribe { _ in
+            goVC.accept(.next)
+        }
         
         return Output(latAndLng: latAndLng.asDriver(), goVC: goVC)
     }
