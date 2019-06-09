@@ -8,9 +8,11 @@
 - 유적지 정보 -> 김
 - 맵 + VR이미지 -> 김
 - 테스트 -> 정
+- 퀴즈 -> 정
 
 #### 사용 라이브러리
 - RxAlamofire
+- Alamofire
 - Kingfisher
 - Coadable
 - GVRSDK
