@@ -76,8 +76,7 @@ class InfoVC: UIViewController, UIGestureRecognizerDelegate {
         output.imagePath.drive(onNext: { [weak self] (imgPath) in
             guard let strongSelf = self else { return }
             strongSelf.nextImagePath = imgPath
-            strongSelf.toolBarImageView.kf.setImage(with: URL(string: imgPath),
-                                                    options: [.processor(ResizingImageProcessor(referenceSize: CGSize(width: 75, height: 48), mode: .aspectFill))])
+            strongSelf.toolBarImageView.kf.setImage(with: URL(string: imgPath))
             strongSelf.extraTextImageView.kf.setImage(with: URL(string: imgPath),
                                                      options: [(.processor(BlurImageProcessor(blurRadius: 4))),.processor(ResizingImageProcessor(referenceSize: CGSize(width: 67, height: 20), mode: .aspectFill))])
         }).disposed(by: disposeBag)
@@ -114,10 +113,10 @@ class InfoVC: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func upAction(_ sender: UISwipeGestureRecognizer) {
         if toolBarImageView.frame.height == 240 {
-            UIView.animate(withDuration: 0.7) { [weak self] in
+            UIView.animate(withDuration: 0.5) { [weak self] in
                 guard let strongSelf = self else {return}
-                strongSelf.toolBarImageView.frame = CGRect(x: 0, y: 0, width: strongSelf.toolBarImageView.frame.width, height: strongSelf.toolBarImageView.frame.height - 160)
-                strongSelf.scrollView.frame = CGRect(x: 0, y: 80, width: strongSelf.scrollView.frame.width, height: strongSelf.scrollView.frame.height + 160)
+                strongSelf.toolBarImageView.frame = CGRect(x: 0, y: strongSelf.toolBarImageView.frame.minY, width: strongSelf.toolBarImageView.frame.width, height: strongSelf.toolBarImageView.frame.height - 160)
+                strongSelf.scrollView.frame = CGRect(x: 0, y: 140, width: strongSelf.scrollView.frame.width, height: strongSelf.scrollView.frame.height + 160)
             }
         }
     }
@@ -125,10 +124,10 @@ class InfoVC: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func downAction(_ sender: UISwipeGestureRecognizer) {
         
         if toolBarImageView.frame.height == 80 {
-            UIView.animate(withDuration: 0.7) { [weak self] in
+            UIView.animate(withDuration: 0.5) { [weak self] in
                 guard let strongSelf = self else {return}
-                strongSelf.toolBarImageView.frame = CGRect(x: 0, y: 0, width: strongSelf.toolBarImageView.frame.width, height: strongSelf.toolBarImageView.frame.height + 160)
-                strongSelf.scrollView.frame = CGRect(x: 0, y: 240, width: strongSelf.scrollView.frame.width, height: strongSelf.scrollView.frame.height - 160)
+                strongSelf.toolBarImageView.frame = CGRect(x: 0, y: strongSelf.toolBarImageView.frame.minY, width: strongSelf.toolBarImageView.frame.width, height: strongSelf.toolBarImageView.frame.height + 160)
+                strongSelf.scrollView.frame = CGRect(x: 0, y: 300, width: strongSelf.scrollView.frame.width, height: strongSelf.scrollView.frame.height - 160)
             }
         }
     }
@@ -144,8 +143,7 @@ class InfoCell: UICollectionViewCell {
     @IBOutlet weak var extraLocationLbl: UILabel!
     
     func configure(infoModel: InfoModel.Extra) {
-        extraImageView.kf.setImage(with: URL(string: infoModel.extraImagePath),
-                                   options: [.processor(ResizingImageProcessor(referenceSize: CGSize(width: 70, height: 75), mode: .aspectFill))])
+        extraImageView.kf.setImage(with: URL(string: infoModel.extraImagePath))
         extraNameLbl.text = infoModel.extraName
         extraLocationLbl.text = infoModel.extraLocation
     }

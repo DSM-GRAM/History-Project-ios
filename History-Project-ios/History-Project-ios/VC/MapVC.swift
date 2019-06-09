@@ -21,6 +21,7 @@ class MapVC: UIViewController {
     
     @IBOutlet weak var homeBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var nextBtn: RoundButton!
     
     let disposeBag = DisposeBag()
     
@@ -35,7 +36,7 @@ class MapVC: UIViewController {
         super.viewDidLoad()
         mapViewModel = MapViewModel()
         
-        let input = MapViewModel.Input(historySiteCode: historySiteCode, clickHome: homeBtn.rx.tap.asSignal() , clickBack: backBtn.rx.tap.asSignal())
+        let input = MapViewModel.Input(historySiteCode: historySiteCode, clickHome: homeBtn.rx.tap.asSignal() , clickBack: backBtn.rx.tap.asSignal(), clickNext: nextBtn.rx.tap.asSignal())
         let output = mapViewModel.transform(input: input)
         
         backgroundImageView.kf.setImage(with: URL(string: backgroudImgPath),
@@ -68,6 +69,7 @@ class MapVC: UIViewController {
             switch state {
             case .home: strongSelf.navigationController?.popToRootViewController(animated: true)
             case .back: strongSelf.navigationController?.popViewController(animated: true)
+            case .next: strongSelf.performSegue(withIdentifier: "goQuiz", sender: nil)
             default: return
             }
         }).disposed(by: disposeBag)
