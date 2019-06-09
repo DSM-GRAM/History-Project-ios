@@ -518,6 +518,16 @@
                                 <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" image="back.png"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdP-Uh-OGr" customClass="RoundButton" customModule="History_Project_ios" customModuleProvider="target">
+                                <rect key="frame" x="222.5" y="607" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="jS1-2k-QzC"/>
+                                    <constraint firstAttribute="width" constant="40" id="sem-9O-RKa"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="edit.png"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -525,6 +535,7 @@
                             <constraint firstItem="elr-g7-xYj" firstAttribute="trailing" secondItem="8E6-vl-hbs" secondAttribute="leading" constant="-15" id="Bzg-As-H1O"/>
                             <constraint firstItem="ri8-YC-nWq" firstAttribute="top" secondItem="G8L-yT-3mV" secondAttribute="bottom" constant="20" id="DN0-yk-8Of"/>
                             <constraint firstItem="tzl-5j-Mcd" firstAttribute="leading" secondItem="Ube-S5-V9D" secondAttribute="leading" id="Eg7-SP-EcW"/>
+                            <constraint firstItem="ZdP-Uh-OGr" firstAttribute="leading" secondItem="8E6-vl-hbs" secondAttribute="trailing" constant="15" id="GAy-Zl-tBa"/>
                             <constraint firstItem="hsM-UJ-iG3" firstAttribute="trailing" secondItem="ri8-YC-nWq" secondAttribute="trailing" id="HLz-gu-lmP"/>
                             <constraint firstItem="hsM-UJ-iG3" firstAttribute="top" secondItem="ri8-YC-nWq" secondAttribute="bottom" constant="-50" id="HNJ-IJ-cZK"/>
                             <constraint firstItem="ri8-YC-nWq" firstAttribute="leading" secondItem="Ube-S5-V9D" secondAttribute="leading" constant="30" id="NCe-V8-IgY"/>
@@ -546,11 +557,28 @@
                         <outlet property="googlemapBtn" destination="ri8-YC-nWq" id="Pwt-Jt-TNq"/>
                         <outlet property="homeBtn" destination="8E6-vl-hbs" id="n1K-MC-5j9"/>
                         <outlet property="mapBackgroundView" destination="hsM-UJ-iG3" id="IE1-fH-fn2"/>
+                        <outlet property="nextBtn" destination="ZdP-Uh-OGr" id="DYg-a9-SOn"/>
+                        <segue destination="maC-lp-7jy" kind="show" identifier="goQuiz" id="rat-dR-roX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjc-W6-dd4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3594.375" y="112.5"/>
+        </scene>
+        <!--QuizVC-->
+        <scene sceneID="azD-xL-Clx">
+            <objects>
+                <viewController id="maC-lp-7jy" customClass="QuizVC" customModule="History_Project_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NEv-7f-yVS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="OgQ-g6-jGZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9oS-NE-dIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4410" y="108"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fy3-f7-H6i">
@@ -574,6 +602,7 @@
     <resources>
         <image name="back.png" width="409.60000610351562" height="409.60000610351562"/>
         <image name="backToList.png" width="384" height="384"/>
+        <image name="edit.png" width="409.60000610351562" height="409.60000610351562"/>
         <image name="home.png" width="409.60000610351562" height="409.60000610351562"/>
         <image name="next.png" width="409.60000610351562" height="409.60000610351562"/>
         <image name="startBackgroundImage.png" width="1440" height="2240"/>
