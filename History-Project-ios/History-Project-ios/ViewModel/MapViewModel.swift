@@ -50,7 +50,7 @@ class MapViewModel: ViewModelType {
         
         input.clickNext.asObservable().subscribe { _ in
             goVC.accept(.next)
-        }
+        }.disposed(by: disposeBag)
         
         return Output(latAndLng: latAndLng.asDriver(), goVC: goVC)
     }

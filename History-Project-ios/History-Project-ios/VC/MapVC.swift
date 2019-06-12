@@ -78,4 +78,13 @@ class MapVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goQuiz"  {
+            let vc = segue.destination as? QuizVC
+            if let vc = vc {
+                vc.historicalSiteCode.accept(self.historySiteCode.value)
+            }
+        }
+    }
 }
