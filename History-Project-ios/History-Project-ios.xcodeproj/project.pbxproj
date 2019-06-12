@@ -35,6 +35,12 @@
 		C90C5AB1229E59DB003EB3C9 /* HistoricalSiteListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90C5AB0229E59DB003EB3C9 /* HistoricalSiteListVC.swift */; };
 		C90C5AB3229E5A52003EB3C9 /* HistoricalSiteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90C5AB2229E5A52003EB3C9 /* HistoricalSiteListViewModel.swift */; };
 		C90C5AB6229E5BD1003EB3C9 /* HistoricalSiteListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90C5AB5229E5BD1003EB3C9 /* HistoricalSiteListModel.swift */; };
+		C94698E822AFE80100944040 /* QuizMultipleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94698E722AFE80100944040 /* QuizMultipleVC.swift */; };
+		C94698EA22AFE80F00944040 /* QuizOXVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94698E922AFE80F00944040 /* QuizOXVC.swift */; };
+		C94698EC22AFE8DB00944040 /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94698EB22AFE8DB00944040 /* QuizModel.swift */; };
+		C94698EE22AFEF7900944040 /* QuizMultipleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94698ED22AFEF7900944040 /* QuizMultipleViewModel.swift */; };
+		C94698F022AFEF8300944040 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94698EF22AFEF8300944040 /* QuizViewModel.swift */; };
+		C94698F222AFEF8F00944040 /* QuizOXViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94698F122AFEF8F00944040 /* QuizOXViewModel.swift */; };
 		C979E969228D400C00210E25 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979E968228D400C00210E25 /* StartVC.swift */; };
 		C990617E2296AA5300FBAB64 /* startBackgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = C990617D2296AA5300FBAB64 /* startBackgroundImage.png */; };
 		C99061812296B92000FBAB64 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99061802296B92000FBAB64 /* Shape.swift */; };
@@ -75,6 +81,12 @@
 		C90C5AB0229E59DB003EB3C9 /* HistoricalSiteListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalSiteListVC.swift; sourceTree = "<group>"; };
 		C90C5AB2229E5A52003EB3C9 /* HistoricalSiteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalSiteListViewModel.swift; sourceTree = "<group>"; };
 		C90C5AB5229E5BD1003EB3C9 /* HistoricalSiteListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalSiteListModel.swift; sourceTree = "<group>"; };
+		C94698E722AFE80100944040 /* QuizMultipleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMultipleVC.swift; sourceTree = "<group>"; };
+		C94698E922AFE80F00944040 /* QuizOXVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizOXVC.swift; sourceTree = "<group>"; };
+		C94698EB22AFE8DB00944040 /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
+		C94698ED22AFEF7900944040 /* QuizMultipleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMultipleViewModel.swift; sourceTree = "<group>"; };
+		C94698EF22AFEF8300944040 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		C94698F122AFEF8F00944040 /* QuizOXViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizOXViewModel.swift; sourceTree = "<group>"; };
 		C979E968228D400C00210E25 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		C990617D2296AA5300FBAB64 /* startBackgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startBackgroundImage.png; sourceTree = "<group>"; };
 		C99061802296B92000FBAB64 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
@@ -185,6 +197,7 @@
 				C90C5AB5229E5BD1003EB3C9 /* HistoricalSiteListModel.swift */,
 				37426C4322A401BF0031AB01 /* InfoModel.swift */,
 				37426C9B22AA9EE40031AB01 /* MapModel.swift */,
+				C94698EB22AFE8DB00944040 /* QuizModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +210,8 @@
 				372162AA229ACF56001D66CD /* InfoVC.swift */,
 				37426C5122A5F3460031AB01 /* MapVC.swift */,
 				37426CA522AD42170031AB01 /* QuizVC.swift */,
+				C94698E722AFE80100944040 /* QuizMultipleVC.swift */,
+				C94698E922AFE80F00944040 /* QuizOXVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -239,6 +254,9 @@
 				C90C5AB2229E5A52003EB3C9 /* HistoricalSiteListViewModel.swift */,
 				372162A8229ACEF9001D66CD /* InfoViewModel.swift */,
 				37426C9D22AB98A70031AB01 /* MapViewModel.swift */,
+				C94698ED22AFEF7900944040 /* QuizMultipleViewModel.swift */,
+				C94698EF22AFEF8300944040 /* QuizViewModel.swift */,
+				C94698F122AFEF8F00944040 /* QuizOXViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -387,6 +405,8 @@
 				C90C5AB1229E59DB003EB3C9 /* HistoricalSiteListVC.swift in Sources */,
 				37216299228C44CE001D66CD /* Api.swift in Sources */,
 				37426C9C22AA9EE40031AB01 /* MapModel.swift in Sources */,
+				C94698F222AFEF8F00944040 /* QuizOXViewModel.swift in Sources */,
+				C94698E822AFE80100944040 /* QuizMultipleVC.swift in Sources */,
 				3721629B228C44EF001D66CD /* HTTPClient.swift in Sources */,
 				37426C5222A5F3460031AB01 /* MapVC.swift in Sources */,
 				C90C5AB3229E5A52003EB3C9 /* HistoricalSiteListViewModel.swift in Sources */,
@@ -394,13 +414,17 @@
 				372162A2228C4581001D66CD /* MainAPI.swift in Sources */,
 				372162B2229D8249001D66CD /* Base.swift in Sources */,
 				C99061812296B92000FBAB64 /* Shape.swift in Sources */,
+				C94698EA22AFE80F00944040 /* QuizOXVC.swift in Sources */,
+				C94698EE22AFEF7900944040 /* QuizMultipleViewModel.swift in Sources */,
 				372162A0228C4577001D66CD /* ImageAPI.swift in Sources */,
 				3769F59C227350EC00EDF795 /* AppDelegate.swift in Sources */,
 				372162AB229ACF56001D66CD /* InfoVC.swift in Sources */,
 				C9FAC4222296D7FF000FCE88 /* ViewModelType.swift in Sources */,
 				37426C4422A401BF0031AB01 /* InfoModel.swift in Sources */,
 				37426C9E22AB98A70031AB01 /* MapViewModel.swift in Sources */,
+				C94698EC22AFE8DB00944040 /* QuizModel.swift in Sources */,
 				37426CA622AD42170031AB01 /* QuizVC.swift in Sources */,
+				C94698F022AFEF8300944040 /* QuizViewModel.swift in Sources */,
 				C90C5AB6229E5BD1003EB3C9 /* HistoricalSiteListModel.swift in Sources */,
 				372162A4228C458D001D66CD /* MapAPI.swift in Sources */,
 				C979E969228D400C00210E25 /* StartVC.swift in Sources */,
