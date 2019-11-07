@@ -11,15 +11,13 @@ import RxCocoa
 import RxSwift
 import Kingfisher
 
-class InfoVC: UIViewController, UIGestureRecognizerDelegate {
-
-    @IBOutlet var upGesture: UISwipeGestureRecognizer!
-    @IBOutlet var downGesture: UISwipeGestureRecognizer!
+class InfoVC: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var listBtn: UIButton!
     @IBOutlet weak var toolBarSiteName: UILabel!
     @IBOutlet weak var toolBarImageView: UIImageView!
-    
+    @IBOutlet weak var toolBarImageViewHeightConstraint: NSLayoutConstraint!
+
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var siteNameLbl: UILabel!
     @IBOutlet weak var locationLbl: UILabel!
@@ -44,6 +42,12 @@ class InfoVC: UIViewController, UIGestureRecognizerDelegate {
     var nextImagePath: String = ""
     
     let disposeBag = DisposeBag()
+    let toolBarImageViewMaxHeight: CGFloat = 280
+    let toolBarImageViewMinHeight: CGFloat = 120
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +82,7 @@ class InfoVC: UIViewController, UIGestureRecognizerDelegate {
             strongSelf.nextImagePath = imgPath
             strongSelf.toolBarImageView.kf.setImage(with: URL(string: imgPath))
             strongSelf.extraTextImageView.kf.setImage(with: URL(string: imgPath),
-                                                     options: [(.processor(BlurImageProcessor(blurRadius: 4))),.processor(ResizingImageProcessor(referenceSize: CGSize(width: 67, height: 20), mode: .aspectFill))])
+                                                      options: [(.processor(BlurImageProcessor(blurRadius: 4))),.processor(ResizingImageProcessor(referenceSize: CGSize(width: 67, height: 20), mode: .aspectFill))])
         }).disposed(by: disposeBag)
         output.location.drive(locationLbl.rx.text).disposed(by: disposeBag)
         output.text.drive(textTextView.rx.text).disposed(by: disposeBag)
@@ -110,30 +114,19 @@ class InfoVC: UIViewController, UIGestureRecognizerDelegate {
         siteNameLbl.text = historicalSiteName
         toolBarSiteName.text = historicalSiteName
     }
-    
-    @IBAction func upAction(_ sender: UISwipeGestureRecognizer) {
-        if toolBarImageView.frame.height == 240 {
-            UIView.animate(withDuration: 0.5) { [weak self] in
-                guard let strongSelf = self else {return}
-                strongSelf.toolBarImageView.frame = CGRect(x: 0, y: strongSelf.toolBarImageView.frame.minY, width: strongSelf.toolBarImageView.frame.width, height: strongSelf.toolBarImageView.frame.height - 160)
-                strongSelf.scrollView.frame = CGRect(x: 0, y: 140, width: strongSelf.scrollView.frame.width, height: strongSelf.scrollView.frame.height + 160)
-            }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let y: CGFloat = scrollView.contentOffset.y
+        let newHeaderViewHeight: CGFloat = toolBarImageViewHeightConstraint.constant - y
+
+        if newHeaderViewHeight > toolBarImageViewMaxHeight {
+            toolBarImageViewHeightConstraint.constant = toolBarImageViewMaxHeight
+        } else if newHeaderViewHeight < toolBarImageViewMinHeight {
+            toolBarImageViewHeightConstraint.constant = toolBarImageViewMinHeight
+        } else {
+            toolBarImageViewHeightConstraint.constant = newHeaderViewHeight
+            scrollView.contentOffset.y = 0
         }
-    }
-    
-    @IBAction func downAction(_ sender: UISwipeGestureRecognizer) {
-        
-        if toolBarImageView.frame.height == 80 {
-            UIView.animate(withDuration: 0.5) { [weak self] in
-                guard let strongSelf = self else {return}
-                strongSelf.toolBarImageView.frame = CGRect(x: 0, y: strongSelf.toolBarImageView.frame.minY, width: strongSelf.toolBarImageView.frame.width, height: strongSelf.toolBarImageView.frame.height + 160)
-                strongSelf.scrollView.frame = CGRect(x: 0, y: 300, width: strongSelf.scrollView.frame.width, height: strongSelf.scrollView.frame.height - 160)
-            }
-        }
-    }
-    
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool{
-        return true
     }
 }
 
